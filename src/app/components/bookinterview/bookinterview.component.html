@@ -1,0 +1,36 @@
+<div class="commoncss">
+    <h1>BooK an Interview</h1>
+    <div class="schedule">
+        <h2>Schedule an Interview</h2>
+        <div class="date">
+            <span>Select Interview Type:</span>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="hr">HR</mat-radio-button>
+                <mat-radio-button value="technical">Technical</mat-radio-button>
+                <mat-radio-button value="specialized">Specialized</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="selectdate">
+            <span>Select Date:</span>
+            <input type="date" name="date" id="date">
+        </div>
+    </div>
+    <div class="slots">
+        <div class="available-slots-card">
+            <h2>Available Slots <small>(All time slots listed are in IST)</small></h2>
+            <div class="navigate-date">
+                <a>Previous Day</a>
+                <a style="color: dodgerblue;">Next Day</a>
+            </div>
+        </div>
+        <div class="interviewslots">
+            <div class="today">
+                <h2>27 Oct' 2021</h2>
+            </div>
+            <div class="tomorrow">
+                <h2>28 Oct' 2021</h2>
+            </div>
+        </div>
+        <button style="width: 100px;float: right;" mat-raised-button color="primary">Continue</button>
+    </div>
+</div>

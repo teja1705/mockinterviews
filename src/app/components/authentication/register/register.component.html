@@ -1,0 +1,54 @@
+<div class="app-component">
+    <div class="app-header">
+      <div class="logo">
+        <span style="font-size: 2rem;">MockInterviews.com</span>
+      </div>
+      <div class="app-navbar-options">
+        <button mat-button>ABOUT US</button>
+      </div>
+    </div>
+    <div class="register-form">
+        <form [formGroup]="Register" (ngSubmit)="register()" class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>First name</mat-label>
+                <input matInput formControlName="firstname" type="text">
+                <mat-error *ngIf="firstname.errors?.required">
+                    First name is Required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Last name</mat-label>
+                <input matInput formControlName="lastname" type="text">
+                <mat-error *ngIf="lastname.errors?.required">
+                    Last name is Required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" type="text">
+                <mat-error *ngIf="email.errors?.required">
+                    Email is Required
+                </mat-error>
+                <mat-error *ngIf="email.errors?.email">
+                    Incorrect Email
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password">
+                <mat-error *ngIf="password.errors?.required">
+                    Password is Required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput formControlName="confirmpassword" type="password" [readonly]="password.invalid">
+                <mat-error *ngIf="confirmpassword.errors?.required">
+                    Confirm Password is Required
+                </mat-error>
+            </mat-form-field>
+            <button class="register-btn" [disabled]="Register.invalid" mat-raised-button color="primary">REGISTER</button>
+            <span>Do you have an account? <a style="color: dodgerblue;cursor: pointer;" (click)="login()">LOGIN</a></span>
+        </form>    
+    </div>
+</div>
