@@ -22,6 +22,12 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MyinterviewsComponent } from './components/myinterviews/myinterviews.component';
 import { TestmysetupComponent } from './components/testmysetup/testmysetup.component';
+import {MatSelectModule} from '@angular/material/select';
+import { InterviewerDashboardComponent } from './components/interviewer-dashboard/interviewer-dashboard.component';
+import { InterviewerWorkspaceComponent } from './components/interviewer-workspace/interviewer-workspace.component';
+import { HistoryComponent } from './components/history/history.component';
+import { InterviewRequestsComponent } from './components/interview-requests/interview-requests.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -36,7 +42,11 @@ import { TestmysetupComponent } from './components/testmysetup/testmysetup.compo
     MyprofileComponent,
     WorkspaceComponent,
     MyinterviewsComponent,
-    TestmysetupComponent
+    TestmysetupComponent,
+    InterviewerDashboardComponent,
+    InterviewerWorkspaceComponent,
+    HistoryComponent,
+    InterviewRequestsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +59,9 @@ import { TestmysetupComponent } from './components/testmysetup/testmysetup.compo
     FormsModule,
     MatIconModule,
     MatRadioModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatSelectModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,19 @@
 <div class="commoncss">
     <h1>My Interviews</h1>
+    <div class="interview-details" *ngIf="date">
+        <span style="font-family: 'Open Sans Condensed', sans-serif;font-weight: 800;font-size: 1.5rem;padding: 0 0 2rem 0rem;">Interview Details</span>
+        <div class="date-time">
+            <span>Interview Date : {{date}}</span>
+            <span>Interview Slot Time : {{slot}}</span>
+        </div>
+        <div class="date-time">
+            <span>Interview Type : {{type}}</span>
+            <span>Role Selected : {{role}}</span>
+        </div>
+        <div class="interview-type">
+            <span>Interview Platform : Google Meet</span>
+            <span>Interview Link : <span style="color: dodgerblue;">https://meet.google.com/oxg-teqa-vut</span></span>
+        </div>
+    </div>
+    <button style="cursor: pointer;border: 0;color: black;background-color: orange;padding: 1rem 3rem;border-radius: 5px;font-size: 1rem;width: 200px;" (click)="assign()">Refresh</button>
 </div>

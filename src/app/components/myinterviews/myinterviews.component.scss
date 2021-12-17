@@ -2,7 +2,41 @@
     margin-top: 100px;
     margin-left: 200px;
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
     &::-webkit-scrollbar {
         display: none;
       }
+}
+.interview-details{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  .date-time{
+      display: flex;
+      width: 60%;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      span{
+          font-family: 'Open Sans Condensed', sans-serif;
+          font-weight: 600;
+          font-size: 1.15rem;
+          padding: 0 0 2rem 0rem;
+      }
+  }
+  .interview-type{
+    display: flex;
+    flex-direction: column;
+      span{
+          font-family: 'Open Sans Condensed', sans-serif;
+          font-weight: 600;
+          font-size: 1.15rem;
+          padding: 0 0 2rem 0rem;
+      }
+  }
 }

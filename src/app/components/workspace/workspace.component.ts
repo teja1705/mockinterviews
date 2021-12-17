@@ -23,6 +23,7 @@ export class WorkspaceComponent implements OnInit {
     this.resourcesView = true
     this.myinterviewsView  = true
     this.testmysetupView  = true
+    document.getElementById('dashboard').className = "hover-menu-item"
   }
   dashboard(){
     this.dashboardView  = false

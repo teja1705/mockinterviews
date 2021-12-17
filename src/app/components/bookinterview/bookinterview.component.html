@@ -1,18 +1,29 @@
-<div class="commoncss">
+<div class="commoncss" *ngIf="book">
     <h1>BooK an Interview</h1>
     <div class="schedule">
         <h2>Schedule an Interview</h2>
-        <div class="date">
+        <div class="date" [formGroup]="optionFormGroup">
             <span>Select Interview Type:</span>
-            <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="hr">HR</mat-radio-button>
-                <mat-radio-button value="technical">Technical</mat-radio-button>
-                <mat-radio-button value="specialized">Specialized</mat-radio-button>
+            <mat-radio-group formControlName="interviewType">
+                <mat-radio-button value="HR">HR</mat-radio-button>
+                <mat-radio-button value="Technical">Technical</mat-radio-button>
+                <mat-radio-button value="Specialized">Specialized</mat-radio-button>
             </mat-radio-group>
         </div>
-        <div class="selectdate">
+        <!-- <div class="selectdate">
             <span>Select Date:</span>
             <input type="date" name="date" id="date">
+        </div> -->
+        <div class="selectdate">
+            <span style="margin-right: 2rem;">Select Role:</span>
+            <mat-form-field [formGroup]="optionFormGroup">
+                <mat-select formControlName="role" placeholder="Choose Role">
+                    <mat-option *ngFor="let role of roles" [value]="role">
+                        {{role}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
         </div>
     </div>
     <div class="slots">
@@ -25,12 +36,46 @@
         </div>
         <div class="interviewslots">
             <div class="today">
-                <h2>27 Oct' 2021</h2>
+                <h2>17 Dec' 2021</h2>
+                <div class="slot-time">
+                    <div class="slot" *ngFor="let slot of slots">
+                        <span (click)="navigateToInterview('17 Dec 2021', slot, 'HR')">{{slot}}</span>
+                    </div>
+                </div>
             </div>
             <div class="tomorrow">
-                <h2>28 Oct' 2021</h2>
+                <h2>18 Dec' 2021</h2>
+                <div class="slot-time">
+                    <div class="slot" *ngFor="let slot of slots">
+                        <span (click)="navigateToInterview('18 Dec 2021', slot, 'HR')">{{slot}}</span>
+                    </div>
+                </div>
             </div>
         </div>
         <button style="width: 100px;float: right;" mat-raised-button color="primary">Continue</button>
     </div>
+</div>
+<div class="commoncss" *ngIf="!book">
+    <div class="user-info">
+        <span>Update your 'Profile' before attending your session for a complete evaluation!</span>
+    </div>
+    <div class="interview-details">
+        <span style="font-family: 'Open Sans Condensed', sans-serif;font-weight: 800;font-size: 1.5rem;padding: 0 0 2rem 0rem;">Interview Details</span>
+        <div class="date-time">
+            <span>{{date}}</span>
+            <span>{{slot}}</span>
+            <span style="color: dodgerblue;cursor: pointer;" (click)="navigateToInterview(date, slot, type)">Change Date and Time</span>
+        </div>
+        <div class="interview-type" style="display: flex;flex-wrap: wrap;flex-direction: column;">
+            <span>Interview Type : {{type}}</span>
+            <span>Role Selected : {{roleSelected}}</span>
+        </div>
+    </div>
+    <!-- <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Choose your State</mat-label>
+        <mat-select formControlName="state">
+          <mat-option [value]="state" *ngFor="let state of stateList">{{state}}</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <button style="cursor: pointer;border: 0;color: black;background-color: orange;padding: 1rem 3rem;border-radius: 5px;font-size: 1rem;" (click)="assign()">Register</button>
 </div>

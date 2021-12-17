@@ -74,3 +74,63 @@
         margin-bottom: 1rem;
     }
 }
+
+.slot-time{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    .slot{
+        padding: 10px;
+        span{
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+    }
+}
+.user-info{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem 3rem;
+    background-color: rgb(250, 187, 106);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 1rem 0;
+    span{
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 1.35rem;
+    }
+}
+.interview-details{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    .date-time{
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        span{
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            padding: 0 0 2rem 0rem;
+        }
+    }
+    .interview-type{
+        span{
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            padding: 0 0 2rem 0rem;
+        }
+    }
+}

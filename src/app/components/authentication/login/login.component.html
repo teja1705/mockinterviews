@@ -9,6 +9,16 @@
     </div>
     <div class="login-form">
     <form [formGroup]="Login" (ngSubmit)="login()" class="example-form">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Choose an option</mat-label>
+            <mat-select formControlName="user">
+              <mat-option value="candidate">Candidate</mat-option>
+              <mat-option value="iinterviewer">Interviewer</mat-option>
+            </mat-select>
+            <mat-error *ngIf="user.errors?.required">
+                User is Required
+            </mat-error>
+          </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
             <input matInput formControlName="email" type="text">
@@ -26,7 +36,7 @@
                 Password is Required
             </mat-error>
         </mat-form-field>
-        <button class="login-btn" mat-raised-button color="primary" [disabled]="Login.invalid">LOGIN</button>
+        <button class="login-btn" mat-raised-button color="primary" (click)="login()" [disabled]="Login.invalid">LOGIN</button>
         <span>Do not have an account? <a style="color: dodgerblue;cursor: pointer;" (click)="register()">REGISTER</a></span>
     </form>
     </div>    

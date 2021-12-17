@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.Login = this.fb.group({
+      user : ['', Validators.required],
       email : ['',[
         Validators.required,
         Validators.email
@@ -28,7 +29,12 @@ export class LoginComponent implements OnInit {
     this.route.navigate(['register'])
   }
   login(){
-    this.route.navigate(['workspace'])
+    if(this.Login.controls['user'].value === 'candidate'){
+      this.route.navigate(['workspace'])
+    }
+    else{
+      this.route.navigate(['interviewer-workspace'])
+    }
   }
 
   get email(){
@@ -37,6 +43,10 @@ export class LoginComponent implements OnInit {
 
   get password(){
     return this.Login.get('password');
+  }
+
+  get user(){
+    return this.Login.get('user');
   }
 
 }

@@ -1,0 +1,85 @@
+<div class="commoncss">
+    <h1>Interview Requests</h1>
+    <h2>Queue</h2>
+    <mat-accordion id="card1">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              P.V.S Chaitanya
+            </mat-panel-title>
+            <mat-panel-description>
+              Interview Type : {{type}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div style="display: flex;flex-wrap: wrap;">
+            <div style="display: flex;flex-direction: column;width: 50%;">
+                <span style="font-family: sans-serif;font-size: 1.1rem;">Date</span>
+                <span style="font-family: sans-serif;font-size: 1.25rem;font-weight: bold;padding: 1rem 0;">{{date}}</span>
+              </div>
+              <div style="display: flex;flex-direction: column;width: 50%;">
+                <span style="font-family: sans-serif;font-size: 1.1rem;">Slot</span>
+                <span style="font-family: sans-serif;font-size: 1.25rem;font-weight: bold;padding: 1rem 0;">{{slot}}</span>
+              </div>
+              <div style="display: flex;flex-direction: column;width: 60%;">
+                <span style="font-family: sans-serif;font-size: 1.1rem;">Selected Role</span>
+                <span style="font-family: sans-serif;font-size: 1.25rem;font-weight: bold;padding: 1rem 0;">{{role}}</span>
+              </div>
+              <div style="display: flex;justify-content: space-between;width: 100%;">
+                <div style="display: flex;flex-direction: column;width: 48%;">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Interview Platform</mat-label>
+                        <input matInput formControlName="platform" type="text">
+                    </mat-form-field>
+                  </div>
+                  <div style="display: flex;flex-direction: column;width: 48%;">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Interview Link</mat-label>
+                        <input matInput formControlName="link" type="text">
+                    </mat-form-field>
+                  </div>
+              </div>
+            <div style="display: flex;flex-direction: column;justify-content: flex-start;width: 20%;border: 1px solid red;border-radius: 5px;padding: 1rem;margin: 1rem;">
+                <button style="color: black;background-color: white;border: 0;border-radius: 5px;" (click)="hide('card1')">Reject</button>
+            </div>
+            <div style="display: flex;flex-direction: column;justify-content: flex-end;width: 20%;border: 1px solid green;border-radius: 5px;padding: 1rem;margin: 1rem;">
+                <button style="color: black;background-color: white;border: 0;border-radius: 5px;" (click)="hide('card1')">Accept</button>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <h2 style="margin-top: 1rem;">Accepted Interviews</h2>
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Ashok
+            </mat-panel-title>
+            <mat-panel-description>
+              Interview Type : HR
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div style="display: flex;flex-wrap: wrap;">
+            <div style="display: flex;flex-direction: column;width: 50%;">
+                <span style="font-family: sans-serif;font-size: 1.1rem;">Date</span>
+                <span style="font-family: sans-serif;font-size: 1.25rem;font-weight: bold;padding: 1rem 0;">17 Dec 2021</span>
+            </div>
+            <div style="display: flex;flex-direction: column;width: 50%;">
+                <span style="font-family: sans-serif;font-size: 1.1rem;">Slot</span>
+                <span style="font-family: sans-serif;font-size: 1.25rem;font-weight: bold;padding: 1rem 0;">11:00 AM</span>
+            </div>
+            <div style="display: flex;flex-direction: column;width: 60%;">
+                <span style="font-family: sans-serif;font-size: 1.1rem;">Selected Role</span>
+                <span style="font-family: sans-serif;font-size: 1.25rem;font-weight: bold;padding: 1rem 0;">{{role}}</span>
+              </div>
+            <div style="display: flex;flex-direction: column;width: 50%;">
+                <span style="font-family: sans-serif;font-size: 1.1rem;">Interview Platform</span>
+                <span style="font-family: sans-serif;font-size: 1.25rem;font-weight: bold;padding: 1rem 0;">Google Meet</span>
+            </div>
+            <div style="display: flex;flex-direction: column;width: 50%;">
+                <span style="font-family: sans-serif;font-size: 1.1rem;">Interview Link</span>
+                <span style="font-family: sans-serif;font-size: 1.25rem;font-weight: bold;padding: 1rem 0;color: dodgerblue;">https://meet.google.com/oxg-teqa-vut</span>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+</div>

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-myinterviews',
-  templateUrl: './myinterviews.component.html',
-  styleUrls: ['./myinterviews.component.scss']
+  selector: 'app-interview-requests',
+  templateUrl: './interview-requests.component.html',
+  styleUrls: ['./interview-requests.component.scss']
 })
-export class MyinterviewsComponent implements OnInit {
+export class InterviewRequestsComponent implements OnInit {
+
   date : string
   slot : string
   type : string
@@ -24,6 +25,9 @@ export class MyinterviewsComponent implements OnInit {
     this.slot = window.localStorage.getItem('slot');
     this.type = window.localStorage.getItem('type');
     this.role = window.localStorage.getItem('role');
+  }
+  hide(id : string){
+    document.getElementById(id).style.display = 'None';
   }
 
 }

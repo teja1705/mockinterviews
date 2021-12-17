@@ -1,9 +1,8 @@
 .commoncss{
     margin-top: 100px;
     margin-left: 200px;
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
+    overflow:scroll;
+    min-height: 100vh;
     &::-webkit-scrollbar {
         display: none;
       }

@@ -1,0 +1,25 @@
+<div class="app-component">
+    <div class="app-header">
+      <div class="logo">
+        <span class="icon">MockInterviews.com</span>
+      </div>
+      <div class="app-navbar-options">
+        <button mat-button>About us</button>
+        <button mat-button>My Credits</button>
+        <button mat-button>Notifications</button>
+        <i class="material-icons">
+            account_circle
+        </i>
+      </div>
+    </div>
+    <div class="menubar">
+        <div class="menu-items">
+            <a (click)="dashboard()" id="dashboard">Dashboard</a>
+            <a (click)="interviewRequests()" id="bookinterview">Interview Requests</a>
+            <a (click)="history()" id="myinterviews">History</a>
+        </div>
+    </div>
+    <app-interviewer-dashboard [hidden]="dashboardView"></app-interviewer-dashboard>
+    <app-interview-requests [hidden]="interviewRequestsView"></app-interview-requests>
+    <app-history [hidden]="historyView"></app-history>
+</div>
